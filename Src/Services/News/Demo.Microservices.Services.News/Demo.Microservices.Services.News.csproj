@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Entities\" />
+    <Folder Include="Mapper\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
