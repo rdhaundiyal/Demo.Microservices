@@ -2,22 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Demo.Microservices.Services.News.Repository;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Demo.Microservices.Services.News.Controllers
+namespace Demo.Microservices.Services.Messaging.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class NewsController :  ControllerBase
+    public class ValuesController : ControllerBase
     {
-        INewsRepository _newsRepository;
-        public NewsController(INewsRepository newsRepository) => _newsRepository = newsRepository;
-
+        // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<News.Entities.News>> Get()
+        public ActionResult<IEnumerable<string>> Get()
         {
-            return _newsRepository.GetAll().ToList();
+            return new string[] { "value1", "value2" };
         }
 
         // GET api/values/5
@@ -27,9 +24,6 @@ namespace Demo.Microservices.Services.News.Controllers
             return "value";
         }
 
-        // GET api/values/5
-        
-     
         // POST api/values
         [HttpPost]
         public void Post([FromBody] string value)
