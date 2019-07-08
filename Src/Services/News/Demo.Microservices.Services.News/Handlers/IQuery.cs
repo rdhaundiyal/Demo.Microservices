@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace Demo.Microservices.Services.News.Handlers
 {
-    public class NewsQueryHandler
+  public  interface IQuery<TEntity> where TEntity:class
     {
+        TEntity Execute();
     }
 }
