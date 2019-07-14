@@ -1,20 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Demo.Microservices.Services.News.Entities
+namespace Demo.Microservices.Services.NewsService.Entities
 {
-    public class News
+    public partial class News
     {
-        [Key]
+        public News()
+        {
+            Images = new HashSet<Images>();
+        }
+
         public Guid Id { get; set; }
         public string Title { get; set; }
-        public string Thumbnail { get; set; }
-        public string Images { get; set; }
         public string Details { get; set; }
-        public DateTime PublishDate { get; set; }
-        public string Source { get; set; }
+        public DateTime? PublishDate { get; set; }
+        public int SourceId { get; set; }
+        public DateTime? LastModifiedDate { get; set; }
+
+        public NewsSource Source { get; set; }
+        public ICollection<Images> Images { get; set; }
     }
 }

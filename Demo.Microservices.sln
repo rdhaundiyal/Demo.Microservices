@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Microservices.Core.Log
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Microservices.Core.Cache", "Src\Core\Caching\Demo.Microservices.Cache\Demo.Microservices.Core.Cache.csproj", "{FAF4A840-2405-48A1-8739-E493A984D693}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Microservices.Services.News", "Src\Services\News\Demo.Microservices.Services.News\Demo.Microservices.Services.News.csproj", "{1AFC07FF-692A-4951-967B-8C4ADB0AD129}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Microservices.Services.NewsService", "Src\Services\News\Demo.Microservices.Services.News\Demo.Microservices.Services.NewsService.csproj", "{1AFC07FF-692A-4951-967B-8C4ADB0AD129}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Microservices.Core.Messages", "Src\Core\Messages\Demo.Microservices.Core.Messages\Demo.Microservices.Core.Messages.csproj", "{FD86B32A-3C1B-46D2-BCC5-070ACD19F252}"
 EndProject
@@ -25,7 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Messaging", "Messaging", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Microservices.Services.Messaging", "Src\Services\Messaging\Demo.Microservices.Services.Messaging\Demo.Microservices.Services.Messaging.csproj", "{F2568ABE-E99D-42F6-A75F-5772E596BC25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Microservices.Core.Repository", "Src\Core\Repository\Demo.Microservices.Core.Repository\Demo.Microservices.Core.Repository.csproj", "{260D19DC-51B0-4BC0-AA15-FD971F5CEC86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Microservices.Core.Repository", "Src\Core\Repository\Demo.Microservices.Core.Repository\Demo.Microservices.Core.Repository.csproj", "{260D19DC-51B0-4BC0-AA15-FD971F5CEC86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

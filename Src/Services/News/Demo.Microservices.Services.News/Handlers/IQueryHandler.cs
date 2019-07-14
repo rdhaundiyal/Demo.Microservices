@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CSharpFunctionalExtensions;
 
 namespace Demo.Microservices.Services.NewsService.Handlers
 {
-    public interface ICommand
+    public interface IQueryHandler<TQuery, TResult>
+      where TQuery : IQuery<TResult>
     {
-        
+        TResult Handle(TQuery query);
     }
 }

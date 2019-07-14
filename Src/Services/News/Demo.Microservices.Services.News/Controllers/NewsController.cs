@@ -2,22 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Demo.Microservices.Services.News.Repository;
+using Demo.Microservices.Services.NewsService.Entities;
+using Demo.Microservices.Services.NewsService.Repository;
+using Demo.Microservices.Services.NewsService.Service;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Demo.Microservices.Services.News.Controllers
+namespace Demo.Microservices.Services.NewsService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class NewsController :  ControllerBase
     {
-        INewsRepository _newsRepository;
-        public NewsController(INewsRepository newsRepository) => _newsRepository = newsRepository;
+        private readonly INewsService _newsService;
+       
+        public NewsController(INewsService newsService) => _newsService = newsService;
 
         [HttpGet]
-        public ActionResult<IEnumerable<News.Entities.News>> Get()
+        public ActionResult<IEnumerable<News>> Get()
         {
-            return _newsRepository.GetAll().ToList();
+            throw new NotImplementedException();
         }
 
         // GET api/values/5

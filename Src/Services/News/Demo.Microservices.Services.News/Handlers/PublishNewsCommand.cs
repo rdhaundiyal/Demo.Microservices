@@ -3,19 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
-using Demo.Microservices.Services.News.Entities;
+using Demo.Microservices.Services.NewsService.Entities;
 
-namespace Demo.Microservices.Services.News.Handlers
+namespace Demo.Microservices.Services.NewsService.Handlers
 {
-    public class PublishNewsCommand : Command<News.Entities.News>
+    public class PublishNewsCommand:ICommand
     {
-        public PublishNewsCommand(Entities.News entity) : base(entity)
-        {
-        }
-
-        public override Result Execute()
-        {
-            throw new NotImplementedException();
-        }
+       Guid newsId { get; set; }
+        
     }
 }

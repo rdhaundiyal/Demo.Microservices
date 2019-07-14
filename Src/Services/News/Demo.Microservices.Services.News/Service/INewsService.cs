@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
-
-namespace Demo.Microservices.Services.News.Service
+using Demo.Microservices.Services.NewsService.Entities;
+namespace Demo.Microservices.Services.NewsService.Service
 {
   public  interface INewsService
     {
-        IQueryable<News.Entities.News> GetTopNews(int count =10);
-        News.Entities.News GetNews(string newsId);
-        Result AddNews(News.Entities.News news);
+        IQueryable<Demo.Microservices.Services.NewsService.Entities.News> GetTopNews(int count =10);
+        Demo.Microservices.Services.NewsService.Entities.News GetNews(Guid newsId);
+        Result PublishNews(Demo.Microservices.Services.NewsService.Entities.News news);
+        bool ApproveNews(Guid newsId);
     }
 }

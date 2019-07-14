@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Demo.Microservices.Services.News.ViewModels
+namespace Demo.Microservices.Services.NewsService.ViewModels
 {
-    public enum Countries
+    public enum CountriesViewModel
     {
         India =91,
         Australia=61,

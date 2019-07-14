@@ -3,29 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
-using Demo.Microservices.Services.News.Entities;
-using Demo.Microservices.Services.News.Repository;
-
-namespace Demo.Microservices.Services.News.Service
+using Demo.Microservices.Services.NewsService.Entities;
+using Demo.Microservices.Services.NewsService.Repository;
+using Demo.Microservices.Core.Repository;
+namespace Demo.Microservices.Services.NewsService.Service
 {
-    
+
     public class NewsService : INewsService
     {
-        public NewsService(INewsRepository newsRepository)
+        private readonly Messages _messages;
+        private readonly IRepository<Entities.News> _newsProvider;
+
+        public NewsService(IRepository<News> newsProvider, Messages messages)
         {
+            _newsProvider = newsProvider;
+            _messages = messages;
 
         }
-        public Result AddNews(Entities.News news)
+        public bool ApproveNews(Guid newsId)
         {
+            //List<StudentDto> list = _messages.Dispatch(new GetListQuery(enrolled, number));
+            //return Ok(list);
             throw new NotImplementedException();
         }
 
-        public virtual Entities.News GetNews(string newsId)
+        public Entities.News GetNews(Guid newsId)
         {
             throw new NotImplementedException();
         }
 
         public IQueryable<Entities.News> GetTopNews(int count = 10)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Result PublishNews(Entities.News news)
         {
             throw new NotImplementedException();
         }

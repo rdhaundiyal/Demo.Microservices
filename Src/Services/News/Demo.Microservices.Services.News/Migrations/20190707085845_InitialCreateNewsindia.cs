@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Demo.Microservices.Services.News.Migrations
+namespace Demo.Microservices.Services.NewsService.Migrations
 {
     public partial class InitialCreateNewsindia : Migration
     {

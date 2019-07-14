@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Demo.Microservices.Services.News
+namespace Demo.Microservices.Services.NewsService
 {
     public class Program
     {

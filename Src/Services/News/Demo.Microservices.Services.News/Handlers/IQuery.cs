@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Demo.Microservices.Services.News.Handlers
+namespace Demo.Microservices.Services.NewsService.Handlers
 {
-  public  interface IQuery<TEntity> where TEntity:class
+  public  interface IQuery<TResult>
     {
-        TEntity Execute();
+       
     }
 }
