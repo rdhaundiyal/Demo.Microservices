@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Messages\Demo.Microservices.Core.Messages\Demo.Microservices.Core.Messages.csproj" />
     <ProjectReference Include="..\..\..\Core\Repository\Demo.Microservices.Core.Repository\Demo.Microservices.Core.Repository.csproj" />
   </ItemGroup>
 

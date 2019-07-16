@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Demo.Microservices.Services.NewsService.Models;
-using Demo.Microservices.Services.NewsService.Repository;
+using Demo.Microservices.Services.NewsService.Providers;
+using Demo.Microservices.Services.NewsService.Providers;
 using Demo.Microservices.Services.NewsService.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

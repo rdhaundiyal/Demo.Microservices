@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.EntityFrameworkCore;
 namespace Demo.Microservices.Core.Repository
 {
-    public abstract class EFBaseRepository<TEntity>: IRepository<TEntity>
+    public abstract class EFBaseProvider<TEntity>: IEntityProvider<TEntity>
         where TEntity : class
     {
         internal DbContext context;
@@ -33,7 +33,7 @@ return query;
 }
 
 */
-        public EFBaseRepository(DbContext context)
+        public EFBaseProvider(DbContext context)
         {
             this.context = context;
             this.dbSet = context.Set<TEntity>();

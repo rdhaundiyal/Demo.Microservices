@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Demo.Microservices.Core.Repository
 {
-   public interface IRepository<TEntity> where TEntity : class
+   public interface IEntityProvider<TEntity> where TEntity : class
     {
         IEnumerable<TEntity> Get();
         TEntity GetByID(object id);

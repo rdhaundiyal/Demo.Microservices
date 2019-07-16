@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Demo.Microservices.Core.Messages;
 using Demo.Microservices.Services.NewsService.Entities;
-using Demo.Microservices.Services.NewsService.Repository;
 using Demo.Microservices.Services.NewsService.Service;
 using Microsoft.AspNetCore.Mvc;
+
+
 
 namespace Demo.Microservices.Services.NewsService.Controllers
 {
@@ -18,7 +18,7 @@ namespace Demo.Microservices.Services.NewsService.Controllers
         public NewsController(INewsService newsService) => _newsService = newsService;
 
         [HttpGet]
-        public ActionResult<IEnumerable<News>> Get()
+        public ResponseMessage<IEnumerable<News>> Get()
         {
             throw new NotImplementedException();
         }

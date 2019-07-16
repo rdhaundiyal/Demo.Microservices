@@ -4,14 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Demo.Microservices.Core.Repository;
 using Demo.Microservices.Services.NewsService.Entities;
-using Demo.Microservices.Services.NewsService.Models;
 using Demo.Microservices.Services.NewsService.Service;
-
-namespace Demo.Microservices.Services.NewsService.Repository
+using Demo.Microservices.Services.NewsService.Providers;
+namespace Demo.Microservices.Services.NewsService.Providers
 {
-    public class NewsRepository : EFBaseRepository<News>
+    public class NewsEFProvider : EFBaseProvider<News>
     {
-        public NewsRepository(NewsDbContext dbContext) : base(dbContext)
+        public NewsEFProvider(NewsDbContext dbContext) : base(dbContext)
         {
         }
     }

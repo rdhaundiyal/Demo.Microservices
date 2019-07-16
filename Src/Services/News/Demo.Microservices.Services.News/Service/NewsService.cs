@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
 using Demo.Microservices.Services.NewsService.Entities;
-using Demo.Microservices.Services.NewsService.Repository;
+using Demo.Microservices.Services.NewsService.Providers;
 using Demo.Microservices.Core.Repository;
 namespace Demo.Microservices.Services.NewsService.Service
 {
@@ -12,9 +12,9 @@ namespace Demo.Microservices.Services.NewsService.Service
     public class NewsService : INewsService
     {
         private readonly Messages _messages;
-        private readonly IRepository<Entities.News> _newsProvider;
+        private readonly IEntityProvider<Entities.News> _newsProvider;
 
-        public NewsService(IRepository<News> newsProvider, Messages messages)
+        public NewsService(IEntityProvider<News> newsProvider, Messages messages)
         {
             _newsProvider = newsProvider;
             _messages = messages;

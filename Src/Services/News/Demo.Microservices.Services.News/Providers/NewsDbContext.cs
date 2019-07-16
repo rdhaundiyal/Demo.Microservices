@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Demo.Microservices.Services.NewsService.Entities;
-namespace Demo.Microservices.Services.NewsService.Repository
+namespace Demo.Microservices.Services.NewsService.Providers
 {
     public partial class NewsDbContext : DbContext
     {
