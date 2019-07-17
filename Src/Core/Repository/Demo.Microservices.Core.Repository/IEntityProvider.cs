@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Demo.Microservices.Core.Repository
+namespace Demo.Microservices.Core.Provider
 {
    public interface IEntityProvider<TEntity> where TEntity : class
     {

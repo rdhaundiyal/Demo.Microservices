@@ -18,9 +18,11 @@ namespace Demo.Microservices.Services.NewsService.Controllers
         public NewsController(INewsService newsService) => _newsService = newsService;
 
         [HttpGet]
-        public ResponseMessage<IEnumerable<News>> Get()
+        public IActionResult Get(Guid newsId)
         {
-            throw new NotImplementedException();
+            var news = _newsService.GetNews(newsId);
+            //map the newsentity to view model in either service or here
+            return Ok(news);
         }
 
         // GET api/values/5

@@ -25,7 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Messaging", "Messaging", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Microservices.Services.Messaging", "Src\Services\Messaging\Demo.Microservices.Services.Messaging\Demo.Microservices.Services.Messaging.csproj", "{F2568ABE-E99D-42F6-A75F-5772E596BC25}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Microservices.Core.Repository", "Src\Core\Repository\Demo.Microservices.Core.Repository\Demo.Microservices.Core.Repository.csproj", "{260D19DC-51B0-4BC0-AA15-FD971F5CEC86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Microservices.Core.Provider", "Src\Core\Repository\Demo.Microservices.Core.Repository\Demo.Microservices.Core.Provider.csproj", "{260D19DC-51B0-4BC0-AA15-FD971F5CEC86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
 using Demo.Microservices.Services.NewsService.Entities;
 using Demo.Microservices.Services.NewsService.Providers;
-using Demo.Microservices.Core.Repository;
+using Demo.Microservices.Core.Provider;
 namespace Demo.Microservices.Services.NewsService.Service
 {
 

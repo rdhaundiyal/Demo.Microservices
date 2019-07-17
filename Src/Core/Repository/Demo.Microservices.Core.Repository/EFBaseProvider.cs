@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
-namespace Demo.Microservices.Core.Repository
+namespace Demo.Microservices.Core.Provider
 {
     public abstract class EFBaseProvider<TEntity>: IEntityProvider<TEntity>
         where TEntity : class

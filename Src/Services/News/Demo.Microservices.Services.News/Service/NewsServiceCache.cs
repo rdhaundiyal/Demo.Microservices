@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Demo.Microservices.Core.Repository;
+using Demo.Microservices.Core.Provider;
 using Demo.Microservices.Services.NewsService.Entities;
 using Demo.Microservices.Services.NewsService.Providers;
 
