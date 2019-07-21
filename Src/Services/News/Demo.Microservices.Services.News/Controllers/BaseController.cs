@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CSharpFunctionalExtensions;
 using Demo.Microservices.Core.Messages;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,7 +25,7 @@ namespace Demo.Microservices.Services.NewsService.Controllers
             return BadRequest(ResponseMessage.Error(errorMessage));
         }
 
-        protected IActionResult FromResult(ResponseMessage result)
+        protected IActionResult FromResult(Result result)
         {
             return result.IsSuccess ? Ok() : Error(result.Error);
         }

@@ -6,6 +6,8 @@ using CSharpFunctionalExtensions;
 using Demo.Microservices.Services.NewsService.Entities;
 using Demo.Microservices.Services.NewsService.Providers;
 using Demo.Microservices.Core.Provider;
+using Demo.Microservices.Services.NewsService.Handlers;
+
 namespace Demo.Microservices.Services.NewsService.Service
 {
 
@@ -29,6 +31,7 @@ namespace Demo.Microservices.Services.NewsService.Service
 
         public Entities.News GetNews(Guid newsId)
         {
+            var result = _messages.Dispatch(new GetNewsQuery(new Guid()));
             throw new NotImplementedException();
         }
 

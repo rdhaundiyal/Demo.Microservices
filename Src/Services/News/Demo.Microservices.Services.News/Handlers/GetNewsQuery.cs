@@ -8,6 +8,13 @@ namespace Demo.Microservices.Services.NewsService.Handlers
 {
     public class GetNewsQuery:IQuery<News>
     {
-      public  Guid NewsId { get; set; }
+        private Guid guid;
+
+        public GetNewsQuery(Guid guid)
+        {
+            this.guid = guid;
+        }
+
+        public  Guid NewsId { get; set; }
     }
 }

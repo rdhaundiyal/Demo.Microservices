@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Demo.Microservices.Core.Provider;
+using Demo.Microservices.Services.NewsService.Entities;
+using Demo.Microservices.Services.NewsService.Handlers;
 using Demo.Microservices.Services.NewsService.Providers;
 using Demo.Microservices.Services.NewsService.Providers;
 using Demo.Microservices.Services.NewsService.Service;
@@ -29,11 +32,19 @@ namespace Demo.Microservices.Services.NewsService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<NewsDbContext>(options =>
        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-           // services.AddScoped<INewsRepository, NewsProvider>();
+           
+            services.AddScoped<Messages>();
+
+            
+            services.AddScoped<IEntityProvider<News>, NewsEFProvider>();
+            services.AddScoped<INewsService, Demo.Microservices.Services.NewsService.Service.NewsService>();
+            //services. AddScoped<IQueryHandler<GetNewsQuery, Entities.News>, GetNewsQueryHandler>();
+          //  services.AddHandlers();
+            // services.AddScoped<INewsRepository, NewsProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +61,7 @@ namespace Demo.Microservices.Services.NewsService
 
             app.UseHttpsRedirection();
             app.UseMvc();
+
         }
     }
 }
