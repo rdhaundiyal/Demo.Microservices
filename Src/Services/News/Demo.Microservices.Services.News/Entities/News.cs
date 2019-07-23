@@ -14,7 +14,7 @@ namespace Demo.Microservices.Services.NewsService.Entities
         public string Title { get; set; }
         public string Details { get; set; }
         public DateTime? PublishDate { get; set; }
-        public int SourceId { get; set; }
+        public Guid SourceId { get; set; }
         public DateTime? LastModifiedDate { get; set; }
 
         public NewsSource Source { get; set; }

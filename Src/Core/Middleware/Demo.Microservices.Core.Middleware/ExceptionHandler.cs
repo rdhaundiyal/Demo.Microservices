@@ -30,7 +30,7 @@ namespace Demo.Microservices.Core.Middleware
         private Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
             // Log exception here
-            string result = JsonConvert.SerializeObject(ResponseMessage.Error(exception.Message));
+            var result = JsonConvert.SerializeObject(ResponseMessage.Error(exception.Message));
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
             return context.Response.WriteAsync(result);

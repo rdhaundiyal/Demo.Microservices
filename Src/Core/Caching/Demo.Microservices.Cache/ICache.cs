@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Demo.Microservices.Core.Cache
+﻿namespace Demo.Microservices.Core.Cache
 {
     public interface ICache
     {

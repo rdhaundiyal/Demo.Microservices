@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
 using Demo.Microservices.Services.NewsService.Entities;
-using Demo.Microservices.Services.NewsService.Providers;
 using Demo.Microservices.Core.Provider;
 using Demo.Microservices.Services.NewsService.Handlers;
 
@@ -14,25 +11,25 @@ namespace Demo.Microservices.Services.NewsService.Service
     public class NewsService : INewsService
     {
         private readonly Messages _messages;
-        private readonly IEntityProvider<Entities.News> _newsProvider;
-
+        //Newsprovider might be used her if we are making  a direct call to other source else remove it later
+        private readonly IEntityProvider<News> _newsProvider;
+     
         public NewsService(IEntityProvider<News> newsProvider, Messages messages)
         {
             _newsProvider = newsProvider;
             _messages = messages;
-
+           
         }
         public bool ApproveNews(Guid newsId)
         {
-            //List<StudentDto> list = _messages.Dispatch(new GetListQuery(enrolled, number));
-            //return Ok(list);
+       
             throw new NotImplementedException();
         }
 
         public Entities.News GetNews(Guid newsId)
         {
-            var result = _messages.Dispatch(new GetNewsQuery(new Guid()));
-            throw new NotImplementedException();
+            var result = _messages.Dispatch(new GetNewsQuery(newsId));
+            return result;
         }
 
         public IQueryable<Entities.News> GetTopNews(int count = 10)

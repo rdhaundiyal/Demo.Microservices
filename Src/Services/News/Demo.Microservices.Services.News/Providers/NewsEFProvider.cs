@@ -8,7 +8,7 @@ using Demo.Microservices.Services.NewsService.Service;
 using Demo.Microservices.Services.NewsService.Providers;
 namespace Demo.Microservices.Services.NewsService.Providers
 {
-    public class NewsEFProvider : EFBaseProvider<News>, IEntityProvider<News>
+    public class NewsEFProvider : EFBaseProvider<News>
     {
         public NewsEFProvider(NewsDbContext dbContext) : base(dbContext)
         {

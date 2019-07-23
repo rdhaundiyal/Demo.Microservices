@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.EntityFrameworkCore;
 namespace Demo.Microservices.Core.Provider
 {
-    public abstract class EFBaseProvider<TEntity>
+    public abstract class EFBaseProvider<TEntity>:IEntityProvider<TEntity>
         where TEntity : class
     {
         internal DbContext context;
@@ -36,7 +36,7 @@ return query;
         public EFBaseProvider(DbContext context)
         {
             this.context = context;
-           // this.dbSet = context.Set<TEntity>();
+           this.dbSet = context.Set<TEntity>();
         }
 
         
@@ -47,7 +47,7 @@ return query;
             return query.ToList();
         }
 
-        public virtual TEntity GetByID(object id)
+        public virtual TEntity GetById(object id)
         {
             return dbSet.Find(id);
         }

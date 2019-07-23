@@ -10,7 +10,7 @@ namespace Demo.Microservices.Services.NewsService.Entities
             News = new HashSet<News>();
         }
 
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public int Country { get; set; }
 

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Demo.Microservices.Core.Provider;
+﻿using Demo.Microservices.Core.Provider;
 using Demo.Microservices.Services.NewsService.Entities;
-using Demo.Microservices.Services.NewsService.Handlers;
-using Demo.Microservices.Services.NewsService.Providers;
+
 namespace Demo.Microservices.Services.NewsService.Handlers
 {
-    public class GetNewsQueryHandler : IQueryHandler<GetNewsQuery, Entities.News>
+    public class GetNewsQueryHandler : IQueryHandler<GetNewsQuery, News>
     {
       private readonly  IEntityProvider<News> _provider;
         public GetNewsQueryHandler(IEntityProvider<News> provider)
@@ -17,7 +12,7 @@ namespace Demo.Microservices.Services.NewsService.Handlers
         }
         public News Handle(GetNewsQuery query)
         {
-            return _provider.GetByID(query.NewsId);
+            return _provider.GetById(query.NewsId);
         }
     }
 }
