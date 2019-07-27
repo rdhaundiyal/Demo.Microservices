@@ -1,4 +1,4 @@
-﻿namespace Demo.Microservices.Services.NewsService.Handlers
+﻿namespace Demo.Microservices.Core.Handlers
 {
     public interface IQueryHandler<TQuery, TResult>
       where TQuery : IQuery<TResult>

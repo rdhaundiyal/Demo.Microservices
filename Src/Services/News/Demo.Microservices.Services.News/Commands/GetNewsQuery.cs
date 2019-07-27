@@ -1,7 +1,8 @@
 ﻿using System;
+using Demo.Microservices.Core.Handlers;
 using Demo.Microservices.Services.NewsService.Entities;
 
-namespace Demo.Microservices.Services.NewsService.Handlers
+namespace Demo.Microservices.Services.NewsService.Commands
 {
     public class GetNewsQuery:IQuery<News>
     {

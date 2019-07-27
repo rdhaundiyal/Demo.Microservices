@@ -1,7 +1,8 @@
-﻿using Demo.Microservices.Core.Provider;
+﻿using Demo.Microservices.Core.Handlers;
+using Demo.Microservices.Core.Provider;
 using Demo.Microservices.Services.NewsService.Entities;
 
-namespace Demo.Microservices.Services.NewsService.Handlers
+namespace Demo.Microservices.Services.NewsService.Commands
 {
     public class GetNewsQueryHandler : IQueryHandler<GetNewsQuery, News>
     {

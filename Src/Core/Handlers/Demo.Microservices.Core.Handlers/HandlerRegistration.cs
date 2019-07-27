@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Demo.Microservices.Services.NewsService.Handlers
+namespace Demo.Microservices.Core.Handlers
 {
     public static class HandlerRegistration
     {
@@ -106,8 +106,8 @@ namespace Demo.Microservices.Services.NewsService.Handlers
         {
             //Type type = attribute.GetType();
 
-            //if (type == typeof(DatabaseRetryAttribute))
-            //    return typeof(DatabaseRetryDecorator<>);
+            //if (type == typeof(CacheAttribute))
+            //    return typeof(CacheDecorator<>);
 
             //if (type == typeof(AuditLogAttribute))
             //    return typeof(AuditLoggingDecorator<>);

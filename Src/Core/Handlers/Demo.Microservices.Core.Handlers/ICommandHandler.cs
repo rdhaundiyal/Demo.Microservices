@@ -1,6 +1,6 @@
 ﻿using CSharpFunctionalExtensions;
 
-namespace Demo.Microservices.Services.NewsService.Handlers
+namespace Demo.Microservices.Core.Handlers
 {
     public interface ICommandHandler<TCommand>
       where TCommand : ICommand

@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Microservices.Services
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Microservices.Core.Provider", "Src\Core\Repository\Demo.Microservices.Core.Repository\Demo.Microservices.Core.Provider.csproj", "{260D19DC-51B0-4BC0-AA15-FD971F5CEC86}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Microservices.Core.Handlers", "Src\Core\Handlers\Demo.Microservices.Core.Handlers\Demo.Microservices.Core.Handlers.csproj", "{47630E5F-BC54-47F8-B6A7-39C7BFD48489}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{260D19DC-51B0-4BC0-AA15-FD971F5CEC86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{260D19DC-51B0-4BC0-AA15-FD971F5CEC86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{260D19DC-51B0-4BC0-AA15-FD971F5CEC86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47630E5F-BC54-47F8-B6A7-39C7BFD48489}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47630E5F-BC54-47F8-B6A7-39C7BFD48489}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47630E5F-BC54-47F8-B6A7-39C7BFD48489}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47630E5F-BC54-47F8-B6A7-39C7BFD48489}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +90,7 @@ Global
 		{59CF86C5-3A79-4710-A13B-700AB3EE27C6} = {9E69D0C5-8983-4772-82FD-BBAC7583ECC9}
 		{F2568ABE-E99D-42F6-A75F-5772E596BC25} = {59CF86C5-3A79-4710-A13B-700AB3EE27C6}
 		{260D19DC-51B0-4BC0-AA15-FD971F5CEC86} = {9239DE15-6E42-4827-BECE-7AAE6F2DB5CC}
+		{47630E5F-BC54-47F8-B6A7-39C7BFD48489} = {9239DE15-6E42-4827-BECE-7AAE6F2DB5CC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAEC4744-C7FF-4CBE-82C0-51D20896EE42}

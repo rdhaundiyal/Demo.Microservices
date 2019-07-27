@@ -1,9 +1,10 @@
 ﻿using System;
 using CSharpFunctionalExtensions;
-using Demo.Microservices.Services.NewsService.Handlers;
 
-namespace Demo.Microservices.Services.NewsService.Service
-{
+
+
+namespace Demo.Microservices.Core.Handlers
+{ 
     public sealed class Messages
     {
 

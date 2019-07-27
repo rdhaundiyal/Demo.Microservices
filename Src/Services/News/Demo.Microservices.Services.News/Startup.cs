@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
+using Demo.Microservices.Core.Handlers;
 using Demo.Microservices.Core.Provider;
 using Demo.Microservices.Services.NewsService.Entities;
-using Demo.Microservices.Services.NewsService.Handlers;
 using Demo.Microservices.Services.NewsService.Providers;
 using Demo.Microservices.Services.NewsService.Service;
 using Microsoft.AspNetCore.Builder;

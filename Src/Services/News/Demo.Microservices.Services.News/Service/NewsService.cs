@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Linq;
 using CSharpFunctionalExtensions;
+using Demo.Microservices.Core.Handlers;
 using Demo.Microservices.Services.NewsService.Entities;
 using Demo.Microservices.Core.Provider;
-using Demo.Microservices.Services.NewsService.Handlers;
+using Demo.Microservices.Services.NewsService.Commands;
+
 
 namespace Demo.Microservices.Services.NewsService.Service
 {
@@ -32,7 +34,7 @@ namespace Demo.Microservices.Services.NewsService.Service
             return result;
         }
 
-        public IQueryable<Entities.News> GetTopNews(int count = 10)
+        public virtual IQueryable<Entities.News> GetTopNews(int count = 10)
         {
             throw new NotImplementedException();
         }
