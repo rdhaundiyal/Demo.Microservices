@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using AutoMapper;
-using Demo.Microservices.Core.Messages;
-using Demo.Microservices.Services.NewsService.Entities;
 using Demo.Microservices.Services.NewsService.Service;
 using Demo.Microservices.Services.NewsService.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-
+using Demo.Microservices.Core.Common;
 
 
 namespace Demo.Microservices.Services.NewsService.Controllers
@@ -32,22 +29,27 @@ namespace Demo.Microservices.Services.NewsService.Controllers
             return Ok(newsViewmodel);
         }
 
+        [HttpGet("{count}")]
+        public IActionResult GetTopNews(int newsCount=5)
+        {
+            throw  new NotImplementedException();
+        }
+
+        [HttpGet("search/{count}")]
+        public IActionResult Search(int newsCount = 5)
+        {
+            throw new NotImplementedException();
+        }
+
+
+
         // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost("approve/{newsId}")]
+        public IActionResult Approve([FromBody] string value)
         {
+            throw  new NotImplementedException();
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+      
     }
 }

@@ -2,16 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <RootNamespace>Demo.Microservices.Services.NewsService</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Constants\" />
+    <Folder Include="Mapper\" />
+    <Folder Include="ViewModels\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.1" />
-    <PackageReference Include="CSharpFunctionalExtensions" Version="1.10.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
@@ -21,8 +21,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Core\Common\Demo.Microservices.Core.Common\Demo.Microservices.Core.Common.csproj" />
     <ProjectReference Include="..\..\..\Core\Handlers\Demo.Microservices.Core.Handlers\Demo.Microservices.Core.Handlers.csproj" />
-    <ProjectReference Include="..\..\..\Core\Messages\Demo.Microservices.Core.Messages\Demo.Microservices.Core.Messages.csproj" />
-    <ProjectReference Include="..\..\..\Core\Repository\Demo.Microservices.Core.Repository\Demo.Microservices.Core.Provider.csproj" />
     <ProjectReference Include="..\..\Entities\Demo.Microservices.Services.Entities\Demo.Microservices.Services.Entities.csproj" />
   </ItemGroup>
 

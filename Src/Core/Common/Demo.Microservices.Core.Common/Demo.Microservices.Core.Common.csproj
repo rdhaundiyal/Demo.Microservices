@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="CSharpFunctionalExtensions" Version="1.10.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Messages\Demo.Microservices.Core.Messages\Demo.Microservices.Core.Messages.csproj" />
+  </ItemGroup>
+</Project>

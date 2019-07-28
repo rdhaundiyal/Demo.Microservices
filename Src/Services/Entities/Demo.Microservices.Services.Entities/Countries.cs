@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Demo.Microservices.Services.NewsService.Entities
+namespace Demo.Microservices.Services.Entities
 {
     public partial class Countries
     {

@@ -3,7 +3,7 @@ using Demo.Microservices.Core.Cache;
 using Demo.Microservices.Core.Handlers;
 using Demo.Microservices.Core.Provider;
 using Demo.Microservices.Services.NewsService.Constants;
-using Demo.Microservices.Services.NewsService.Entities;
+using Demo.Microservices.Services.Entities;
 
 namespace Demo.Microservices.Services.NewsService.Service
 {

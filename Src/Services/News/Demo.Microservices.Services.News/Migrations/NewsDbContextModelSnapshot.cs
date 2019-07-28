@@ -20,7 +20,7 @@ namespace Demo.Microservices.Services.NewsService.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Demo.Microservices.Services.NewsService.Entities.News", b =>
+            modelBuilder.Entity("Demo.Microservices.Services.Entities.News", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();

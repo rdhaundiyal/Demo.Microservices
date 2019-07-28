@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Demo.Microservices.Core.Handlers;
+using Demo.Microservices.Services.Entities;
 
-namespace Demo.Microservices.Services.NewsService.Commands
+namespace Demo.Microservices.Services.Search.Commands
 {
-    public class ApproveNewsCommand:ICommand
+    public class SearchNewsQuery:IQuery<IList<News>>
     {
-        public Guid NewsId { get; set; }
     }
 }

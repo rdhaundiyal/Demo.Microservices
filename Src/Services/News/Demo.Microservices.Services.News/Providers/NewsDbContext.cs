@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Demo.Microservices.Services.NewsService.Entities;
+using Demo.Microservices.Services.Entities;
 namespace Demo.Microservices.Services.NewsService.Providers
 {
     public partial class NewsDbContext : DbContext
@@ -22,11 +22,11 @@ namespace Demo.Microservices.Services.NewsService.Providers
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=LAPTOP-6U9AOJQ2;Database=NewsIndia;User ID=sa;Password=Passw0rd;");
-            }
+//            if (!optionsBuilder.IsConfigured)
+//            {
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+//                optionsBuilder.UseSqlServer("Server=LAPTOP-6U9AOJQ2;Database=NewsIndia;User ID=sa;Password=Passw0rd;");
+//            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

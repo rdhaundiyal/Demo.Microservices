@@ -2,9 +2,9 @@
 using Demo.Microservices.Core.Messages;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Demo.Microservices.Services.NewsService.Controllers
+namespace Demo.Microservices.Core.Common
 {
-    public class BaseController : Controller
+ public abstract   class BaseController : Controller
     {
         protected new IActionResult Ok()
         {

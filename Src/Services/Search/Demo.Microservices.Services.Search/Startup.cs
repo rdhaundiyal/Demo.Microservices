@@ -1,17 +1,17 @@
-﻿using AutoMapper;
-using Demo.Microservices.Core.Handlers;
-using Demo.Microservices.Core.Provider;
-using Demo.Microservices.Services.Entities;
-using Demo.Microservices.Services.NewsService.Providers;
-using Demo.Microservices.Services.NewsService.Service;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
-namespace Demo.Microservices.Services.NewsService
+namespace Demo.Microservices.Services.Search
 {
     public class Startup
     {
@@ -25,19 +25,7 @@ namespace Demo.Microservices.Services.NewsService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAutoMapper();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<NewsDbContext>(options =>
-       options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-           
-            services.AddScoped<Messages>();
-
-            
-            services.AddScoped<IEntityProvider<News>, NewsEFProvider>();
-            services.AddScoped<INewsService, Demo.Microservices.Services.NewsService.Service.NewsService>();
-                      services.AddHandlers();
-           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,7 +42,6 @@ namespace Demo.Microservices.Services.NewsService
 
             app.UseHttpsRedirection();
             app.UseMvc();
-
         }
     }
 }
