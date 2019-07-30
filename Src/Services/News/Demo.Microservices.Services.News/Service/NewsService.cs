@@ -22,11 +22,7 @@ namespace Demo.Microservices.Services.NewsService.Service
             _messages = messages;
            
         }
-        public bool ApproveNews(Guid newsId)
-        {
-       
-            throw new NotImplementedException();
-        }
+      
 
         public Entities.News GetNews(Guid newsId)
         {
@@ -40,6 +36,11 @@ namespace Demo.Microservices.Services.NewsService.Service
         }
 
         public Result PublishNews(Entities.News news)
+        {
+            throw new NotImplementedException();
+        }
+
+        Result INewsService.ApproveNews(Guid newsId)
         {
             throw new NotImplementedException();
         }

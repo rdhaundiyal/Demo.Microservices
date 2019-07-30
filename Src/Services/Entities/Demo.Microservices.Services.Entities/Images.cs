@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Demo.Microservices.Services.Entities { 
     public partial class Images

@@ -1,8 +1,5 @@
 ﻿using System;
 using CSharpFunctionalExtensions;
-
-
-
 namespace Demo.Microservices.Core.Handlers
 { 
     public sealed class Messages

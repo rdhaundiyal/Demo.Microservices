@@ -54,7 +54,7 @@ namespace Demo.Microservices.Services.NewsService
 
             app.UseHttpsRedirection();
             app.UseMvc();
-
+            
         }
     }
 }

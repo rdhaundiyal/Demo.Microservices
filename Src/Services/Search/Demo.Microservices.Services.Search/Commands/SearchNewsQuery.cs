@@ -9,5 +9,7 @@ namespace Demo.Microservices.Services.Search.Commands
 {
     public class SearchNewsQuery:IQuery<IList<News>>
     {
+        public string Keywords { get; set; }
+
     }
 }

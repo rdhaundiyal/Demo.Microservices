@@ -7,15 +7,17 @@
   <ItemGroup>
     <Folder Include="Constants\" />
     <Folder Include="Mapper\" />
-    <Folder Include="ViewModels\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.1" />
+    <PackageReference Include="CSharpFunctionalExtensions" Version="1.10.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
     <PackageReference Include="SolrNet" Version="1.0.17" />
+    <PackageReference Include="SolrNet.Microsoft.DependencyInjection" Version="1.0.17" />
   </ItemGroup>
 
   <ItemGroup>

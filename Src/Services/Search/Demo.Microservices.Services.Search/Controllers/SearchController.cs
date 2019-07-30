@@ -1,5 +1,7 @@
-﻿using System;
+﻿using AutoMapper;
 using Demo.Microservices.Core.Common;
+using Demo.Microservices.Services.Search.Service;
+using Demo.Microservices.Services.Search.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Demo.Microservices.Services.Search.Controllers
@@ -8,16 +10,31 @@ namespace Demo.Microservices.Services.Search.Controllers
     [ApiController]
     public class SearchController : BaseController
     {
+
+
+        private readonly ISearchService _searchService;
+        private readonly IMapper _mapper;
+       
+
+        public SearchController(ISearchService searchService, IMapper mapper)
+        {
+            _searchService = searchService;
+            _mapper = mapper;
+        }
         [HttpGet("{count}")]
         public IActionResult GetTopNews(int count)
         {
-            throw new NotImplementedException();
+            var news = _searchService.GetNews(count);
+            var newsViewmodel = _mapper.Map<NewsListViewModel>(news);
+            return Ok(newsViewmodel);
         }
 
         [HttpGet("search/{keyword}")]
         public IActionResult Search(string keyWord)
         {
-            throw new NotImplementedException();
+            var news = _searchService.Search(keyWord);
+            var newsViewmodel = _mapper.Map<NewsListViewModel>(news);
+            return Ok(newsViewmodel);
         }
     }
 }

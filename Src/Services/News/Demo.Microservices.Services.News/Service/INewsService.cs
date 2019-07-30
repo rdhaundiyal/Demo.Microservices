@@ -9,6 +9,6 @@ namespace Demo.Microservices.Services.NewsService.Service
         IQueryable<Entities.News> GetTopNews(int count =10);
         Entities.News GetNews(Guid newsId);
         Result PublishNews(Entities.News news);
-        bool ApproveNews(Guid newsId);
+        Result ApproveNews(Guid newsId);
     }
 }
