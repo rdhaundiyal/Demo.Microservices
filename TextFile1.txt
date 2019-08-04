@@ -1,0 +1,2 @@
+Once the item is submitted it passes through a lot of check before uploading and hence will be moved to the bus before actuly storing
+once the message is approved or rejected corresponding user will be informed via email service

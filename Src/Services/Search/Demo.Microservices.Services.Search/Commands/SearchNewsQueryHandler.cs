@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Demo.Microservices.Core.Handlers;
 using Demo.Microservices.Services.Entities;
 using Demo.Microservices.Services.Search.Model;
+using Demo.Microservices.Services.Search.Solr;
 using SolrNet;
 
 namespace Demo.Microservices.Services.Search.Commands
@@ -17,7 +18,15 @@ namespace Demo.Microservices.Services.Search.Commands
         }
         public IList<News> Handle(SearchNewsQuery query)
         {
+
+
+
+            var news = _solrOperations.QueryAsync(SolrQueryHelper.BuildQuery(new SearchParameters()));
+            var result= news.Result;
             throw new NotImplementedException();
         }
+
+        
+
     }
 }

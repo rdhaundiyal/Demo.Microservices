@@ -22,6 +22,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Microservices.Core.Middleware", "Src\Core\Middleware\Demo.Microservices.Core.Middleware\Demo.Microservices.Core.Middleware.csproj", "{61C3A7B6-7F9B-4622-8295-0B9453CD0593}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Messaging", "Messaging", "{59CF86C5-3A79-4710-A13B-700AB3EE27C6}"
+	ProjectSection(SolutionItems) = preProject
+		TextFile1.txt = TextFile1.txt
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Microservices.Services.Messaging", "Src\Services\Messaging\Demo.Microservices.Services.Messaging\Demo.Microservices.Services.Messaging.csproj", "{F2568ABE-E99D-42F6-A75F-5772E596BC25}"
 EndProject
@@ -31,15 +34,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Microservices.Core.Han
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Search", "Search", "{8FD396D6-BD9A-4279-B831-EC358CF8E320}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Microservices.Services.Search", "Src\Services\Search\Demo.Microservices.Services.Search\Demo.Microservices.Services.Search.csproj", "{F2FE630D-E158-497F-8B5B-5D850858DC73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Microservices.Services.Search", "Src\Services\Search\Demo.Microservices.Services.Search\Demo.Microservices.Services.Search.csproj", "{F2FE630D-E158-497F-8B5B-5D850858DC73}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{A84BFDFB-8345-4170-99DB-283CE24B2C7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Microservices.Services.Entities", "Src\Services\Entities\Demo.Microservices.Services.Entities\Demo.Microservices.Services.Entities.csproj", "{9534DCAA-F9F3-455D-90FC-85A0596125A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Microservices.Services.Entities", "Src\Services\Entities\Demo.Microservices.Services.Entities\Demo.Microservices.Services.Entities.csproj", "{9534DCAA-F9F3-455D-90FC-85A0596125A6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{B4396C46-0C8C-47C7-AE74-27D41B9FD92C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Microservices.Core.Common", "Src\Core\Common\Demo.Microservices.Core.Common\Demo.Microservices.Core.Common.csproj", "{070A2D65-F325-40C5-9D45-9A6A8219AC5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Microservices.Core.Common", "Src\Core\Common\Demo.Microservices.Core.Common\Demo.Microservices.Core.Common.csproj", "{070A2D65-F325-40C5-9D45-9A6A8219AC5F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "News", "News", "{897C8408-3098-41D3-8E76-45010DC20BEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -106,7 +111,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{B7621A45-CE0B-4C8D-BE39-5A9D3AA6F357} = {9239DE15-6E42-4827-BECE-7AAE6F2DB5CC}
 		{FAF4A840-2405-48A1-8739-E493A984D693} = {9239DE15-6E42-4827-BECE-7AAE6F2DB5CC}
-		{1AFC07FF-692A-4951-967B-8C4ADB0AD129} = {9E69D0C5-8983-4772-82FD-BBAC7583ECC9}
+		{1AFC07FF-692A-4951-967B-8C4ADB0AD129} = {897C8408-3098-41D3-8E76-45010DC20BEB}
 		{FD86B32A-3C1B-46D2-BCC5-070ACD19F252} = {9239DE15-6E42-4827-BECE-7AAE6F2DB5CC}
 		{5CB1FDEF-0D6B-4FA9-897E-9012A4CBD052} = {9239DE15-6E42-4827-BECE-7AAE6F2DB5CC}
 		{D04B3F69-E214-4DCD-8892-94F218BFE422} = {9239DE15-6E42-4827-BECE-7AAE6F2DB5CC}
@@ -121,6 +126,7 @@ Global
 		{9534DCAA-F9F3-455D-90FC-85A0596125A6} = {A84BFDFB-8345-4170-99DB-283CE24B2C7C}
 		{B4396C46-0C8C-47C7-AE74-27D41B9FD92C} = {9239DE15-6E42-4827-BECE-7AAE6F2DB5CC}
 		{070A2D65-F325-40C5-9D45-9A6A8219AC5F} = {B4396C46-0C8C-47C7-AE74-27D41B9FD92C}
+		{897C8408-3098-41D3-8E76-45010DC20BEB} = {9E69D0C5-8983-4772-82FD-BBAC7583ECC9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAEC4744-C7FF-4CBE-82C0-51D20896EE42}
