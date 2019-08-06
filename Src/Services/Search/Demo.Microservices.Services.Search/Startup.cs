@@ -36,10 +36,10 @@ namespace Demo.Microservices.Services.Search
                     Convert.ToBase64String(authenticationBytes))
             );
 
-            services.AddSolrNet("http://localhost:8081/solr/films/select?q=*%3A*", solrOptions);
+            services.AddSolrNet("http://localhost:8081/solr/films", solrOptions);
 
 
-            services.AddSolrNet<SolrNewsItem>("http://localhost:8081/solr/films/select?q=*%3A*",solrOptions);
+            services.AddSolrNet<SolrNewsItem>("http://localhost:8081/solr/films",solrOptions);
             
            
             services.AddScoped<Messages>();

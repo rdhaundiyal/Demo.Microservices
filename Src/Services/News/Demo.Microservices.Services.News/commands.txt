@@ -1,0 +1,4 @@
+﻿
+PM> Scaffold-DbContext "Server=LAPTOP-6U9AOJQ2;Database=NewsIndia;User ID=sa;Password=;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
+Install-Package System.Runtime.Caching -Version 4.5.0
+Install-Package Microsoft.Extensions.Primitives -Version 2.2.0

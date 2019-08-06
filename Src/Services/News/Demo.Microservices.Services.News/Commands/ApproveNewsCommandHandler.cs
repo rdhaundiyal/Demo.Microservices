@@ -15,9 +15,9 @@ namespace Demo.Microservices.Services.NewsService.Commands
 
         public Result Handle(ApproveNewsCommand command)
         {
-            var news = _provider.GetById(command.NewsId);
-            news.IsApproved = true;
-            _provider.Update(news);
+            //var news = _provider.GetById(command.NewsId);
+            //news.IsApproved = true;
+            //_provider.Update(news);
             return Result.Ok();
         }
     }

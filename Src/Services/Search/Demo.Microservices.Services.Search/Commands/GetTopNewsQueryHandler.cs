@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Demo.Microservices.Core.Handlers;
 using Demo.Microservices.Services.Entities;
@@ -21,10 +22,14 @@ namespace Demo.Microservices.Services.Search.Commands
         {
          var ClustresuerResults=  GetNews();
 
-            throw new NotImplementedException();
+         foreach (var s in ClustresuerResults.Result.ToList())
+         {
+             var z = s;
+         }
+         throw new NotImplementedException();
         }
 
-        public async Task<object> GetNews()
+        public async Task<SolrQueryResults<SolrNewsItem>> GetNews()
         {
             var news = await _solrOperations.QueryAsync(SolrQueryHelper.BuildQuery(new SearchParameters()));
             return news;
