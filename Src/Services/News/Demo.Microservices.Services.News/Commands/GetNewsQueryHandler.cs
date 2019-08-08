@@ -13,6 +13,7 @@ namespace Demo.Microservices.Services.NewsService.Commands
         }
         public News Handle(GetNewsQuery query)
         {
+            //this will get an individual news item
             return _provider.GetById(query.NewsId);
         }
     }

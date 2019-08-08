@@ -16,6 +16,9 @@ namespace Demo.Microservices.Services.NewsService.Commands
 
         public Result Handle(PublishNewsCommand command)
         {
+            //here it should push the item to queue as a first step as if it is pushed to database then there should be another one which will remove it if it is not approved
+            //queue should be a persistent one
+
             var news = new News()
             {
                 Images = command.Images,
@@ -25,7 +28,7 @@ namespace Demo.Microservices.Services.NewsService.Commands
                 SourceId = command.SourceId
             };
             _provider.Insert(news);
-           
+           //add the item to queue for approval
             return Result.Ok();
         }
     }
