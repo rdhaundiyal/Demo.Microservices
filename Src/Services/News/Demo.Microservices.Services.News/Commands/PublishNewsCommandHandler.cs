@@ -1,5 +1,6 @@
 ﻿using CSharpFunctionalExtensions;
 using Demo.Microservices.Core.Handlers;
+using Demo.Microservices.Core.MessageQueue;
 using Demo.Microservices.Core.Provider;
 using Demo.Microservices.Services.Entities;
 
@@ -8,10 +9,13 @@ namespace Demo.Microservices.Services.NewsService.Commands
     public class PublishNewsCommandHandler:ICommandHandler<PublishNewsCommand>
     {
         private readonly IEntityProvider<News> _provider;
+        private IMessageQueueProvider _messageQueueProvider;
 
-        public PublishNewsCommandHandler(IEntityProvider<News> newsProvider)
+        public PublishNewsCommandHandler(IEntityProvider<News> newsProvider,IMessageQueueProvider messageQueueProvider)
         {
             _provider = newsProvider;
+            _messageQueueProvider = messageQueueProvider;
+
         }
 
         public Result Handle(PublishNewsCommand command)
@@ -27,6 +31,9 @@ namespace Demo.Microservices.Services.NewsService.Commands
                 Title = command.Title,
                 SourceId = command.SourceId
             };
+
+            _messageQueueProvider.Push(news);
+
             _provider.Insert(news);
            //add the item to queue for approval
             return Result.Ok();

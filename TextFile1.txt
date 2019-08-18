@@ -1,2 +1,14 @@
 Once the item is submitted it passes through a lot of check before uploading and hence will be moved to the bus before actuly storing
 once the message is approved or rejected corresponding user will be informed via email service
+
+Flow 1
+different provider submit news to the channel 
+The api has a method which accepts new and push it to the queue as persistent
+
+Flow 2
+There is a program running which reads the queue and based on rules approve or reject the news
+if approved , it will push the new to db as well as solr for indexing 
+simultaneously, it will send a message to queue to send email to the provider
+
+Flow 3
+The system can get data from Solr for search while it gets details from db both through json based service

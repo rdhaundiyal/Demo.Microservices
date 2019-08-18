@@ -29,17 +29,17 @@ namespace Demo.Microservices.Services.NewsService.Controllers
             return Ok(newsViewmodel);
         }
 
-        [HttpGet("{count}")]
-        public IActionResult GetTopNews(int newsCount=5)
-        {
-            throw  new NotImplementedException();
-        }
+        //[HttpGet("{count}")]
+        //public IActionResult GetTopNews(int newsCount=5)
+        //{
+        //    throw  new NotImplementedException();
+        //}
 
-        [HttpGet("search/{count}")]
-        public IActionResult Search(int newsCount = 5)
-        {
-            throw new NotImplementedException();
-        }
+        //[HttpGet("search/{count}")]
+        //public IActionResult Search(int newsCount = 5)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
 
 
