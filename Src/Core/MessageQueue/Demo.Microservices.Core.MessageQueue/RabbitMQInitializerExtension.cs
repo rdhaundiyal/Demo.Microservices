@@ -19,6 +19,7 @@ namespace Demo.Microservices.Core.MessageQueue
             Func<IServiceProvider, object> func = provider =>
             {
 
+
                 _factory = new ConnectionFactory
                 {
                     HostName =configuration["localhost"],

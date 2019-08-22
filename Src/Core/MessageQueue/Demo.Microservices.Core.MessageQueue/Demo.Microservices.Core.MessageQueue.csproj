@@ -8,6 +8,7 @@
     
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Services\Entities\Demo.Microservices.Services.Entities\Demo.Microservices.Services.Entities.csproj" />
     <ProjectReference Include="..\..\Common\Demo.Microservices.Core.Common\Demo.Microservices.Core.Common.csproj" />
   </ItemGroup>
   <ItemGroup>
@@ -16,6 +17,9 @@
     </Reference>
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
       <HintPath>C:\Users\rdhau\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions">
+      <HintPath>C:\Users\rdhau\.nuget\packages\microsoft.extensions.logging.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

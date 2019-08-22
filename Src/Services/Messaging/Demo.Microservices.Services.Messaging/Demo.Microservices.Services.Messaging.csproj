@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Handlers\Demo.Microservices.Core.Handlers\Demo.Microservices.Core.Handlers.csproj" />
     <ProjectReference Include="..\..\..\Core\MessageQueue\Demo.Microservices.Core.MessageQueue\Demo.Microservices.Core.MessageQueue.csproj" />
     <ProjectReference Include="..\..\Entities\Demo.Microservices.Services.Entities\Demo.Microservices.Services.Entities.csproj" />
   </ItemGroup>

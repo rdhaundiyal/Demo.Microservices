@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Demo.Microservices.Core.Handlers;
 using Demo.Microservices.Services.Entities;
 using Demo.Microservices.Services.Search.Commands;
@@ -18,7 +19,7 @@ namespace Demo.Microservices.Services.Search.Service
 
         }
 
-        public IList<News> GetNews(int count)
+        public virtual IQueryable GetTopNews(int count)
         {
             var result = _messages.Dispatch(new GetTopNewsQuery(){Count = count});
             return result;

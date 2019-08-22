@@ -5,7 +5,7 @@ using CSharpFunctionalExtensions;
 using Demo.Microservices.Core.Handlers;
 using Demo.Microservices.Services.BatchJob.Commands;
 
-namespace Demo.Microservices.Services.BatchJob
+namespace Demo.Microservices.Services.BatchJob.Commands
 {
 public    class SendMailCommandHandler:ICommandHandler<SendMailCommand>
     {

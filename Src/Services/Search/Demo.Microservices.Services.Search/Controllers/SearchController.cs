@@ -35,7 +35,7 @@ namespace Demo.Microservices.Services.Search.Controllers
             {
             }
 
-            var news = _searchService.GetNews(count);
+            var news = _searchService.GetTopNews(count);
             var newsViewmodel = _mapper.Map<NewsListViewModel>(news);
             return Ok(newsViewmodel);
         }

@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Core\Handlers\Demo.Microservices.Core.Handlers\Demo.Microservices.Core.Handlers.csproj" />
+    <ProjectReference Include="..\..\..\Core\MessageQueue\Demo.Microservices.Core.MessageQueue\Demo.Microservices.Core.MessageQueue.csproj" />
   </ItemGroup>
 
 </Project>

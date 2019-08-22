@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Caching\Demo.Microservices.Cache\Demo.Microservices.Core.Cache.csproj" />
     <ProjectReference Include="..\..\..\Core\Common\Demo.Microservices.Core.Common\Demo.Microservices.Core.Common.csproj" />
     <ProjectReference Include="..\..\..\Core\Handlers\Demo.Microservices.Core.Handlers\Demo.Microservices.Core.Handlers.csproj" />
     <ProjectReference Include="..\..\Entities\Demo.Microservices.Services.Entities\Demo.Microservices.Services.Entities.csproj" />

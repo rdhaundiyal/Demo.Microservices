@@ -28,28 +28,6 @@ namespace Demo.Microservices.Services.NewsService.Controllers
             var newsViewmodel = _mapper.Map<NewsViewModel>(news);
             return Ok(newsViewmodel);
         }
-
-        //[HttpGet("{count}")]
-        //public IActionResult GetTopNews(int newsCount=5)
-        //{
-        //    throw  new NotImplementedException();
-        //}
-
-        //[HttpGet("search/{count}")]
-        //public IActionResult Search(int newsCount = 5)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-
-
-        // POST api/values
-        [HttpPost("approve/{newsId}")]
-        public IActionResult Approve([FromBody] string value)
-        {
-            throw  new NotImplementedException();
-        }
-
       
     }
 }

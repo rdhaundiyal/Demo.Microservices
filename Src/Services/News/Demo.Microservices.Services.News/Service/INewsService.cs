@@ -6,9 +6,9 @@ namespace Demo.Microservices.Services.NewsService.Service
 {
   public  interface INewsService
     {
-        IQueryable<Entities.News> GetTopNews(int count =10);
+       
         Entities.News GetNews(Guid newsId);
-        Result PublishNews(Entities.News news);
-        Result ApproveNews(Guid newsId);
+       
+        
     }
 }
