@@ -10,19 +10,19 @@ namespace Demo.Microservices.Services.NewsService.Service
     public class NewsServiceCache : NewsService
     {
         private readonly ICache _cache;
-        public NewsServiceCache(IEntityProvider<News> newsProvider, Messages messages,ICache cache) : base( newsProvider,  messages)
+        public NewsServiceCache(IEntityProvider<News> newsProvider, Messages messages,ICache cache) : base(   messages)
         {
             _cache = cache;
         }
-        public override IQueryable<News> GetTopNews(int count = 10)
-        {
-            var topNewsList = _cache.Retrieve<IQueryable<News>>(CacheKeys.TopNewsList);
-            if (topNewsList != null) return topNewsList;
+        //public override IQueryable<News> GetTopNews(int count = 10)
+        //{
+        //    var topNewsList = _cache.Retrieve<IQueryable<News>>(CacheKeys.TopNewsList);
+        //    if (topNewsList != null) return topNewsList;
 
-            topNewsList = base.GetTopNews(count);
-            _cache.Store(CacheKeys.TopNewsList,topNewsList);
+        //    topNewsList = base.GetTopNews(count);
+        //    _cache.Store(CacheKeys.TopNewsList,topNewsList);
 
-            return topNewsList;
-        }
+        //    return topNewsList;
+        //}
     }
 }

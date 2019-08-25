@@ -11,14 +11,14 @@ namespace Demo.Microservices.Services.Messaging.Commands
 {
     public class PublishNewsCommandHandler:ICommandHandler<PublishNewsCommand>
     {
-        private readonly IMessageQueueProvider _messageQueueProvider;
-        public PublishNewsCommandHandler(  IMessageQueueProvider messageQueueProvider)
+        private readonly IMessageServiceBus _messageServiceBus;
+        public PublishNewsCommandHandler(  IMessageServiceBus messageServiceBus)
         {
-            _messageQueueProvider = messageQueueProvider;
+            _messageServiceBus = messageServiceBus;
         }
         public Result Handle(PublishNewsCommand command)
         {
-            _messageQueueProvider.Push(command);
+            _messageServiceBus.Push(command,"message.news");
             return Result.Ok();
         }
     }

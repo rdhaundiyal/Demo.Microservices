@@ -1,56 +1,49 @@
 ﻿using System;
 using System.IO;
-using System.Net.Sockets;
-using Demo.Microservices.Core.Common;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
-using RabbitMQ.Client.Events;
-using RabbitMQ.Client.Exceptions;
-using RabbitMQ.Client.MessagePatterns;
 
 namespace Demo.Microservices.Core.MessageQueue
 {
-   public abstract  class RabbitMQclient:IDisposable
+    public abstract  class RabbitMQclient:IDisposable
     {
-        protected  IConnection Connection;
-        protected  IModel Model;
-     
-        protected  string ExchangeName;
-        protected string QueueName;
-        protected string RoutingKey;
+        public readonly  string ExchangeName;
         private IConnectionFactory _connectionFactory;
         private int _retryCount;
         private ILogger _logger;
         IConnection _connection;
         bool _disposed;
-        protected RabbitMQclient(IConnectionFactory connectionFactory, ILogger logger, int retryCount = 5)
+        public readonly string Type;
+        protected RabbitMQclient(IConnectionFactory connectionFactory, ILogger logger,string exchangeName,string type, int retryCount = 5)
         {
             _connectionFactory = connectionFactory ?? throw new ArgumentNullException(nameof(connectionFactory));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _retryCount = retryCount;
+            ExchangeName = exchangeName;
+            Type = type;
         }
 
-      
+      public IConnection GetConnection()
+        {
+            if(!IsConnected)
+            {
+                TryConnect();
+            }
+            return _connection;
+
+        }
         
 
         object sync_root = new object();
-        public bool IsConnected
+        private bool IsConnected
         {
             get
             {
                 return _connection != null && _connection.IsOpen && !_disposed;
             }
         }
-        public IModel CreateModel()
-        {
-            if (!IsConnected)
-            {
-                throw new InvalidOperationException("No RabbitMQ connections are available to perform this action");
-            }
-
-            return _connection.CreateModel();
-        }
+     
+       
         void OnConnectionShutdown(object sender, ShutdownEventArgs reason)
         {
             if (_disposed) return;
@@ -59,35 +52,7 @@ namespace Demo.Microservices.Core.MessageQueue
 
             TryConnect();
         }
-        public void SendMessage<T>(T message, string routingKey,string topicName="")
-        {
-            SendMessage(message.Serialize(),routingKey);
-        }
-
-
-        public void SendMessage(byte[] message, string routingKey)
-        {
-            Model.BasicPublish(ExchangeName, routingKey, null, message);
-        }
-
-        public T ReceiveMessage<T>(string queueName)
-        {
-
-            Model.BasicQos(0, 10, false);
-            Subscription subscription = new Subscription(Model,
-                queueName, false);
-
-            BasicDeliverEventArgs deliveryArguments = subscription.Next();
-
-            var message =
-                (T)deliveryArguments.Body.DeSerialize<T>();
-
-            var routingKey = deliveryArguments.RoutingKey;
-
-            subscription.Ack(deliveryArguments);
-            return message;
-            
-        }
+       
 
         public void Dispose()
         {
@@ -111,19 +76,22 @@ namespace Demo.Microservices.Core.MessageQueue
 
             lock (sync_root)
             {
-                var policy = RetryPolicy.Handle<SocketException>()
-                    .Or<BrokerUnreachableException>()
-                    .WaitAndRetry(_retryCount, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)), (ex, time) =>
-                        {
-                            _logger.LogWarning(ex, "RabbitMQ Client could not connect after {TimeOut}s ({ExceptionMessage})", $"{time.TotalSeconds:n1}", ex.Message);
-                        }
-                    );
+                _connection = _connectionFactory
+                       .CreateConnection();
 
-                policy.Execute(() =>
-                {
-                    _connection = _connectionFactory
-                        .CreateConnection();
-                });
+                //var policy = RetryPolicy.Handle<SocketException>()
+                //    .Or<BrokerUnreachableException>()
+                //    .WaitAndRetry(_retryCount, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)), (ex, time) =>
+                //        {
+                //            _logger.LogWarning(ex, "RabbitMQ Client could not connect after {TimeOut}s ({ExceptionMessage})", $"{time.TotalSeconds:n1}", ex.Message);
+                //        }
+                //    );
+
+                //policy.Execute(() =>
+                //{
+                //    _connection = _connectionFactory
+                //        .CreateConnection();
+                //});
 
                 if (IsConnected)
                 {

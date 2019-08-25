@@ -1,22 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Linq;
 using CSharpFunctionalExtensions;
 using Demo.Microservices.Core.Handlers;
-using Demo.Microservices.Core.MessageQueue;
+using Demo.Microservices.Core.Provider;
+using Demo.Microservices.Services.BatchJob.Models;
+using Demo.Microservices.Services.Entities;
+using SolrNet;
 
 namespace Demo.Microservices.Services.BatchJob.Commands
 {
     public class ApproveNewsCommandHandler:ICommandHandler<ApproveNewsCommand>
     {
-        private IMessageQueueProvider _messageQueueProvider;
-        public ApproveNewsCommandHandler(IMessageQueueProvider messageQueueProvider)
+        private readonly IEntityProvider<News> _provider;
+        private readonly ISolrOperations<SolrNewsItem> _solrOperation;
+        public ApproveNewsCommandHandler(IEntityProvider<News> provider, ISolrOperations<SolrNewsItem> solrOperations)
         {
-            _messageQueueProvider = messageQueueProvider;
+            _provider = provider;
+            _solrOperation = solrOperations;
         }
+
         public Result Handle(ApproveNewsCommand command)
         {
-            throw new NotImplementedException();
+            //news should be picked from queue
+            //approved and removed from the queue
+            //db entry for the item
+            //pushed to solr
+            //send email to the queue
+            var news = _provider.GetById(command.NewsId);
+            news.Approved = true;
+            _provider.Update(news);
+            var solrNews = new SolrNewsItem()
+            {
+                Category = null,
+                Details = news.Details,
+                Id = news.Id,
+                Source = news.Source.Name,
+                Title = news.Title,
+                Thumbnail = news.Images.FirstOrDefault().ImagePath
+
+            };
+            _solrOperation.AddAsync(solrNews);
+            return Result.Ok();
         }
     }
 }

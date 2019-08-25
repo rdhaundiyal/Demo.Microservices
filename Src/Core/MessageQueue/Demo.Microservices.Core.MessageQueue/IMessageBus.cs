@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Demo.Microservices.Core.MessageQueue
 {
-   public interface IMessageQueueProvider
+   public interface IMessageServiceBus
    {
-       void Push(object message);
-       T GetMessage<T>();
+       void Push(object message,string routingKey);
+       T GetMessage<T>(string queueName, string routingKey);
    }
 }

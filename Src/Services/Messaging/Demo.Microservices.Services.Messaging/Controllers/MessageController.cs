@@ -18,12 +18,6 @@ namespace Demo.Microservices.Services.Messaging.Controllers
     {
 
         private readonly Messages _messages;
-       
-
-      
-
-
-        
         public MessageController(Messages messages)
         {
             _messages = messages;
@@ -32,12 +26,16 @@ namespace Demo.Microservices.Services.Messaging.Controllers
         [HttpGet("submit")]
         public IActionResult SubmitNews(News news)
         {
-            var publishNewsCommand = new PublishNewsCommand();
+            var publishNewsCommand = new PublishNewsCommand()
+            {
+                Details = news.Details,
+                Title = news.Title,
+                SourceId = news.SourceId,
+                PublishDate=DateTime.Now
+            };
             var result = _messages.Dispatch(publishNewsCommand);
-
-           
-            return Ok();
+            return FromResult(result);
         }
-       
+
     }
 }

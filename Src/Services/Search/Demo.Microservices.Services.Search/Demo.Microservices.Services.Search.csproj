@@ -27,6 +27,7 @@
     <ProjectReference Include="..\..\..\Core\Common\Demo.Microservices.Core.Common\Demo.Microservices.Core.Common.csproj" />
     <ProjectReference Include="..\..\..\Core\Handlers\Demo.Microservices.Core.Handlers\Demo.Microservices.Core.Handlers.csproj" />
     <ProjectReference Include="..\..\Entities\Demo.Microservices.Services.Entities\Demo.Microservices.Services.Entities.csproj" />
+    <ProjectReference Include="..\..\News\Demo.Microservices.Services.News\Demo.Microservices.Services.NewsService.csproj" />
   </ItemGroup>
 
 </Project>

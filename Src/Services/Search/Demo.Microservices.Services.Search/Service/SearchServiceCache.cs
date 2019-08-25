@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Demo.Microservices.Core.Cache;
 using Demo.Microservices.Core.Handlers;
 using Demo.Microservices.Services.Entities;
+using Demo.Microservices.Services.NewsService.Constants;
 using Demo.Microservices.Services.Search.Model;
 using SolrNet;
 
@@ -17,7 +18,7 @@ namespace Demo.Microservices.Services.Search.Service
         {
             _cache = cache;
         }
-        public override IList<News> GetTopNews(int count = 10)
+        public override IQueryable<News> GetTopNews(int count = 10)
         {
             var topNewsList = _cache.Retrieve<IQueryable<News>>(CacheKeys.TopNewsList);
             if (topNewsList != null) return topNewsList;

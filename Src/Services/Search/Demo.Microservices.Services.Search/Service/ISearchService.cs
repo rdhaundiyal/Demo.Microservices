@@ -6,7 +6,7 @@ namespace Demo.Microservices.Services.Search.Service
 {
    public interface ISearchService
    {
-       IQueryable GetTopNews(int count);
+        IQueryable<News> GetTopNews(int count);
        IList<News> Search(string keywords);
    }
 }

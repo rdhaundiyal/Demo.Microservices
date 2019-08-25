@@ -10,7 +10,7 @@ using SolrNet;
 
 namespace Demo.Microservices.Services.Search.Commands
 {
-    public class GetTopNewsQueryHandler:IQueryHandler<GetTopNewsQuery,IList<News>>
+    public class GetTopNewsQueryHandler:IQueryHandler<GetTopNewsQuery,IQueryable<News>>
     {
         private readonly ISolrOperations<SolrNewsItem> _solrOperations;
         public GetTopNewsQueryHandler(ISolrOperations<SolrNewsItem> solrOperations, Messages messages)
@@ -18,7 +18,7 @@ namespace Demo.Microservices.Services.Search.Commands
             _solrOperations = solrOperations;
 
         }
-        public IList<News> Handle(GetTopNewsQuery query)
+        public IQueryable<News> Handle(GetTopNewsQuery query)
         {
          var ClustresuerResults=  GetNews();
 
@@ -29,7 +29,7 @@ namespace Demo.Microservices.Services.Search.Commands
          throw new NotImplementedException();
         }
 
-        public async Task<SolrQueryResults<SolrNewsItem>> GetNews()
+        private async Task<SolrQueryResults<SolrNewsItem>> GetNews()
         {
             var news = await _solrOperations.QueryAsync(SolrQueryHelper.BuildQuery(new SearchParameters()));
             return news;
