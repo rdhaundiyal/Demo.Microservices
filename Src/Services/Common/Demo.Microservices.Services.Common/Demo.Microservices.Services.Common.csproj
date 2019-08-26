@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Handlers\Demo.Microservices.Core.Handlers\Demo.Microservices.Core.Handlers.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
       <HintPath>C:\Users\rdhau\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>

@@ -25,6 +25,7 @@
     <ProjectReference Include="..\..\..\Core\Handlers\Demo.Microservices.Core.Handlers\Demo.Microservices.Core.Handlers.csproj" />
     <ProjectReference Include="..\..\..\Core\MessageQueue\Demo.Microservices.Core.MessageQueue\Demo.Microservices.Core.MessageQueue.csproj" />
     <ProjectReference Include="..\..\..\Core\Messages\Demo.Microservices.Core.Messages\Demo.Microservices.Core.Messages.csproj" />
+    <ProjectReference Include="..\..\..\Core\Middleware\Demo.Microservices.Core.Middleware\Demo.Microservices.Core.Middleware.csproj" />
     <ProjectReference Include="..\..\..\Core\Repository\Demo.Microservices.Core.Repository\Demo.Microservices.Core.Provider.csproj" />
     <ProjectReference Include="..\..\Entities\Demo.Microservices.Services.Entities\Demo.Microservices.Services.Entities.csproj" />
   </ItemGroup>

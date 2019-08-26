@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Demo.Microservices.Core.Handlers;
+using Demo.Microservices.Core.Middleware;
 using Demo.Microservices.Core.Provider;
 using Demo.Microservices.Services.Entities;
 using Demo.Microservices.Services.NewsService.Providers;
@@ -52,7 +53,7 @@ namespace Demo.Microservices.Services.NewsService
             {
                 app.UseHsts();
             }
-
+            app.UseMiddleware<ExceptionHandler>();
             app.UseHttpsRedirection();
             app.UseMvc();
             
