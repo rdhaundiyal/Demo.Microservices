@@ -1,14 +1,10 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 using Demo.Microservices.Services.Entities;
 namespace Demo.Microservices.Services.NewsService.Providers
 {
     public partial class NewsDbContext : DbContext
     {
-        public NewsDbContext()
-        {
-        }
+        
 
         public NewsDbContext(DbContextOptions<NewsDbContext> options)
             : base(options)

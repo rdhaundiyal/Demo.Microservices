@@ -1,16 +1,10 @@
-﻿using System;
-using Demo.Microservices.Services.Entities;
+﻿using Demo.Microservices.Services.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Demo.Microservices.Services.NewsService.Models
 {
     public partial class NewsIndiaContext : DbContext
     {
-        public NewsIndiaContext()
-        {
-        }
-
         public NewsIndiaContext(DbContextOptions<NewsIndiaContext> options)
             : base(options)
         {

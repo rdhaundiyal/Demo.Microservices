@@ -4,12 +4,12 @@ using CSharpFunctionalExtensions;
 
 namespace Demo.Microservices.Core.Handlers.Decorators
 {
-    public sealed class TransactionScopeDecorator<TCommand> : ICommandHandler<TCommand>
+    public sealed class TransactionScopeAttributeDecorator<TCommand> : ICommandHandler<TCommand>
     where TCommand : ICommand
     {
         private readonly ICommandHandler<TCommand> _handler;
 
-        public TransactionScopeDecorator(ICommandHandler<TCommand> handler)
+        public TransactionScopeAttributeDecorator(ICommandHandler<TCommand> handler)
         {
             _handler = handler;
 

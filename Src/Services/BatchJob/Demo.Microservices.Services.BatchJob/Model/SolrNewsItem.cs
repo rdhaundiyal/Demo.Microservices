@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using SolrNet.Attributes;
 
-namespace Demo.Microservices.Services.BatchJob.Models
+namespace Demo.Microservices.Services.BatchJob.Model
 {
     public class SolrNewsItem
     {

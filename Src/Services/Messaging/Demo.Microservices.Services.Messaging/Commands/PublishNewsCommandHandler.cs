@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CSharpFunctionalExtensions;
+﻿using CSharpFunctionalExtensions;
 using Demo.Microservices.Core.Handlers;
+using Demo.Microservices.Core.Handlers.Decorators;
 using Demo.Microservices.Core.MessageQueue;
-using Demo.Microservices.Services.Entities;
 
 namespace Demo.Microservices.Services.Messaging.Commands
 {
+    [Retry]
     public class PublishNewsCommandHandler:ICommandHandler<PublishNewsCommand>
     {
         private readonly IMessageServiceBus _messageServiceBus;

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Demo.Microservices.Core.Common;
+﻿using Demo.Microservices.Core.Common;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using RabbitMQ.Client.MessagePatterns;
@@ -11,9 +8,10 @@ namespace Demo.Microservices.Core.MessageQueue
     public class RabbitMQServiceBus : IMessageServiceBus
     {
         private IModel _model;
-        RabbitMQclient _client;
+        readonly RabbitMQclient _client;
         public RabbitMQServiceBus(RabbitMQclient client)
         {
+            _client = client;
             CreateModel();
         }
         public void CreateModel()
@@ -37,7 +35,7 @@ namespace Demo.Microservices.Core.MessageQueue
             BasicDeliverEventArgs deliveryArguments = subscription.Next();
 
             var message =
-                (T)deliveryArguments.Body.DeSerialize<T>();
+                deliveryArguments.Body.DeSerialize<T>();
 
             //var routingKey = deliveryArguments.RoutingKey;
 

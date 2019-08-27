@@ -5,16 +5,17 @@ using RabbitMQ.Client;
 
 namespace Demo.Microservices.Core.MessageQueue
 {
-    public abstract  class RabbitMQclient:IDisposable
+    public abstract class RabbitMQclient : IDisposable
     {
-        public readonly  string ExchangeName;
-        private IConnectionFactory _connectionFactory;
+        public readonly string ExchangeName;
+        private readonly IConnectionFactory _connectionFactory;
         private int _retryCount;
-        private ILogger _logger;
-        IConnection _connection;
+        private readonly ILogger _logger;
+        private IConnection _connection;
         bool _disposed;
         public readonly string Type;
-        protected RabbitMQclient(IConnectionFactory connectionFactory, ILogger logger,string exchangeName,string type, int retryCount = 5)
+        readonly object _syncRoot = new object();
+        protected RabbitMQclient(IConnectionFactory connectionFactory, ILogger logger, string exchangeName, string type, int retryCount = 5)
         {
             _connectionFactory = connectionFactory ?? throw new ArgumentNullException(nameof(connectionFactory));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
@@ -23,27 +24,21 @@ namespace Demo.Microservices.Core.MessageQueue
             Type = type;
         }
 
-      public IConnection GetConnection()
+        public IConnection GetConnection()
         {
-            if(!IsConnected)
+            if (!IsConnected)
             {
                 TryConnect();
             }
             return _connection;
 
         }
-        
 
-        object sync_root = new object();
-        private bool IsConnected
-        {
-            get
-            {
-                return _connection != null && _connection.IsOpen && !_disposed;
-            }
-        }
-     
-       
+
+
+        private bool IsConnected => _connection != null && _connection.IsOpen && !_disposed;
+
+
         void OnConnectionShutdown(object sender, ShutdownEventArgs reason)
         {
             if (_disposed) return;
@@ -52,7 +47,7 @@ namespace Demo.Microservices.Core.MessageQueue
 
             TryConnect();
         }
-       
+
 
         public void Dispose()
         {
@@ -74,7 +69,7 @@ namespace Demo.Microservices.Core.MessageQueue
         {
             _logger.LogInformation("RabbitMQ Client is trying to connect");
 
-            lock (sync_root)
+            lock (_syncRoot)
             {
                 _connection = _connectionFactory
                        .CreateConnection();
@@ -96,7 +91,7 @@ namespace Demo.Microservices.Core.MessageQueue
                 if (IsConnected)
                 {
                     _connection.ConnectionShutdown += OnConnectionShutdown;
-               
+
 
                     _logger.LogInformation("RabbitMQ Client acquired a persistent connection to '{HostName}' and is subscribed to failure events", _connection.Endpoint.HostName);
 

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Demo.Microservices.Services.BatchJob.Service
+﻿namespace Demo.Microservices.Services.BatchJob.Service
 {
    public class NewsVerificationService
     {

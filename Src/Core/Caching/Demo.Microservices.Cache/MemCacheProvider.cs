@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Runtime.Caching.Hosting;
-using System.Text;
 using Microsoft.Extensions.Caching.Memory;
 
 namespace Demo.Microservices.Core.Cache
 {
   public  class MemCacheProvider:ICache
   {
-      private IMemoryCache _cache;
+      private readonly IMemoryCache _cache;
         public MemCacheProvider(IMemoryCache memoryCache)
         {
             _cache = memoryCache;
